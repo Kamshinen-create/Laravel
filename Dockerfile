@@ -25,14 +25,11 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy composer files first for better caching
-COPY composer.json composer.lock ./
+# Copy the entire application first
+COPY . /var/www/html
 
 # Install dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction
-
-# Copy existing application directory contents
-COPY . /var/www/html
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html \
