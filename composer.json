@@ -5,33 +5,17 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.0|^8.1",
-        "anandsiddharth/laravel-paytm-wallet": "^2.0",
-        "bacon/bacon-qr-code": "^2.0",
-        "doocacommerce/paghiper-php-sdk": "^1.2",
-        "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
-        "intervention/image": "^2.7",
+        "php": "^8.0",
         "laravel/framework": "^8.65",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "mercadopago/dx-php": "2.5.1",
-        "mews/purifier": "^3.3",
-        "mollie/laravel-mollie": "*",
-        "nexmo/laravel": "^3.0",
-        "nowpayments/nowpayments-api-php": "dev-main",
-        "paypal/rest-api-sdk-php": "^1.14",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "intervention/image": "^2.7",
         "phpmailer/phpmailer": "^6.5",
-        "pnlinh/laravel-infobip-sms": "^1.0",
-        "pragmarx/google2fa-laravel": "^2.0",
-        "razorpay/razorpay": "^2.8",
-        "spatie/laravel-cookie-consent": "^2.12",
         "spatie/laravel-permission": "^5.5",
-        "stripe/stripe-php": "^7.103",
-        "victorybiz/laravel-crypto-payment-gateway": "^1.2"
+        "stripe/stripe-php": "^7.103"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.6",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
@@ -77,11 +61,8 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true,
-        "platform": {
-            "php": "8.1"
-        }
+        "sort-packages": true
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
