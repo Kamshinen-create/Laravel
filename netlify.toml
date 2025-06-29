@@ -1,0 +1,14 @@
+[build]
+  publish = "public"
+  command = "composer install --no-dev --optimize-autoloader"
+
+[build.environment]
+  PHP_VERSION = "8.1"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.php"
+  status = 200
+
+[functions]
+  directory = "functions" 

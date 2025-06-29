@@ -12,26 +12,8 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        // WARNING: These endpoints should implement proper signature validation
-        // instead of being excluded from CSRF protection
-        // 'flutter-success',
-        // 'razor/success',
-        // 'paytm/success'
+        'flutter-success',
+        'razor/success',
+        'paytm/success'
     ];
-
-    /**
-     * TODO: Implement proper signature validation for payment callbacks
-     * Example implementation:
-     * 
-     * protected function tokensMatch($request)
-     * {
-     *     $token = $request->input('_token') ?: $request->header('X-CSRF-TOKEN');
-     *     
-     *     if (!$token && $request->header('X-Requested-With') === 'XMLHttpRequest') {
-     *         $token = $request->header('X-CSRF-TOKEN');
-     *     }
-     *     
-     *     return is_string($token) && hash_equals($request->session()->token(), $token);
-     * }
-     */
 }

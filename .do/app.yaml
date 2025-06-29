@@ -1,0 +1,22 @@
+name: laravel-app
+services:
+  - name: web
+    source_dir: /
+    github:
+      repo: Kamshinen-create/Laravel
+      branch: main
+    run_command: php artisan serve --host 0.0.0.0 --port $PORT
+    environment_slug: php
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    envs:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: CACHE_DRIVER
+        value: file
+      - key: SESSION_DRIVER
+        value: file
+      - key: QUEUE_CONNECTION
+        value: sync
