@@ -1,11 +1,19 @@
 [phases.setup]
-nixPkgs = ["php81", "php81Extensions.mysql", "php81Extensions.gd", "php81Extensions.zip", "php81Extensions.mbstring", "php81Extensions.xml", "php81Extensions.curl", "composer"]
+nixPkgs = ["php81", "php81Extensions.mysql", "php81Extensions.gd", "php81Extensions.zip", "php81Extensions.mbstring", "php81Extensions.xml", "php81Extensions.curl", "php81Extensions.bcmath", "php81Extensions.exif", "php81Extensions.pcntl", "composer"]
 
 [phases.install]
-cmds = ["composer install --no-dev --optimize-autoloader --no-interaction"]
+cmds = [
+  "composer config --no-plugins allow-plugins.pragmarx/google2fa-laravel true",
+  "composer config --no-plugins allow-plugins.victorybiz/laravel-crypto-payment-gateway true",
+  "composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist"
+]
 
 [phases.build]
-cmds = ["php artisan config:cache", "php artisan route:cache", "php artisan view:cache"]
+cmds = [
+  "php artisan config:cache",
+  "php artisan route:cache", 
+  "php artisan view:cache"
+]
 
 [start]
 cmd = "php artisan serve --host=0.0.0.0 --port=$PORT" 
